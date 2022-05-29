@@ -1,5 +1,4 @@
 # VaultDragon Tech Challenge
-==
 
 [![CI](https://github.com/fgcui1204/vault-dragon/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/fgcui1204/vault-dragon/actions/workflows/build-deploy.yml)
 ## About the project
