@@ -22,8 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Build & Test  
         run: npm ci && npm run build && npm run test
+      - name: Setup serverless
+        run: npm i -g serverless
       - name: serverless deploygst
-        run: npm run build && npm run deploy
+        run: npm run build && npm i -g serverless && npm run deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
