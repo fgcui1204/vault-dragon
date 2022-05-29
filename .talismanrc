@@ -14,5 +14,7 @@ fileignoreconfig:
 - filename: test/api-test/get-object.spec.js
   checksum: f8b715950234749751886595f13f617d782356bf264b1bcb33ba9d8c259b154c
 - filename: .github/workflows/build-deploy.yml
-  checksum: bf6c3f379a70e649367e0a0c4b8aa1dd1653c094d2fa14ae7ea47b5b13d547a1  
+  checksum: bf6c3f379a70e649367e0a0c4b8aa1dd1653c094d2fa14ae7ea47b5b13d547a1
+- filename: README.md
+  checksum: f0089253a0cdda81a3c45e1d5456811bab856c3dd64861b1ac8918eec162fdc3    
 version: ""
