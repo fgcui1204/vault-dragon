@@ -1,0 +1,14 @@
+fileignoreconfig:
+- filename: package-lock.json
+  checksum: 515572f6b57359c2e8206ba68b04e64f05e44d0d6fddeaa2c425b77963253dfe
+- filename: src/handler/object-handler.js
+  checksum: 93e007297e6c4c17266df311dc9a27452f90e166cc3387fb7f76705e4a5e253a
+- filename: src/service/object-service.js
+  checksum: 2a55cbe1639bfe0992e7ee8e112997183b95b4c82066602054ffa3deb0c9f774
+- filename: .github/workflows/build-deploy.yml
+  checksum: 27e82ec9bce3d4f0547d1a7ab0cf1c50eab4e7204b79e24ad287f63e7db080f6
+- filename: test/handler/object-handler.spec.js
+  checksum: 47f75ad749e334ccc6994107579f5cbf43edf69e74e64868ea673d2f352937a8
+- filename: test/service/object-service.spec.js
+  checksum: ab030eca502867ba2e4e84300deaad71d9ba6b53d2e5f0e4eeced4d1201f41db
+version: ""

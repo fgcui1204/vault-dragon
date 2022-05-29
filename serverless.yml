@@ -1,0 +1,69 @@
+service: vaultdragon-tech-challenge
+frameworkVersion: '3'
+
+custom:
+  tableName: 'objects-table-${sls:stage}'
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+    noStart: true
+    stages:
+      - dev
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-2
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:PutItem
+          Resource:
+            - Fn::GetAtt: [ ObjectsTable, Arn ]
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:custom.tableName}/index/objectKeyIndex"
+
+  environment:
+    OBJECTS_TABLE: ${self:custom.tableName}
+
+functions:
+  objects-api:
+    description: Save and retrieve object
+    handler: dist/index.handler
+    events:
+      - httpApi: '*'
+
+resources:
+  Resources:
+    ObjectsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: objectId
+            AttributeType: S
+          - AttributeName: objectKey
+            AttributeType: S
+        KeySchema:
+          - AttributeName: objectId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        GlobalSecondaryIndexes:
+          - IndexName: objectKeyIndex
+            KeySchema:
+              - AttributeName: objectKey
+                KeyType: HASH
+            Projection:
+              ProjectionType: "ALL"
+        TableName: ${self:custom.tableName}
+
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline

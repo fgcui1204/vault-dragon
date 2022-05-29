@@ -1,0 +1,6 @@
+name: vaultdragon-tech-challenge
+org: serverlessinc
+description: vaultdragon tech challenge
+keywords: aws, serverless, node, lambda, dynamodb
+repo: https://github.com/fgcui1204/vault-dragon.git
+license: MIT
