@@ -10,7 +10,8 @@
     "dev": "nodemon --exec npm run restart",
     "test": "jest",
     "ci": "npm run build && npm run test",
-    "lint": "eslint --fix --ext .js ."
+    "lint": "eslint --fix --ext .js .",
+    "deploy": "serverless package && serverless deploy"
   },
   "author": "Fugang Cui",
   "license": "ISC",

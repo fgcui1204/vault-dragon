@@ -1,6 +1,9 @@
 service: vaultdragon-tech-challenge
 frameworkVersion: '3'
 
+package:
+  excludeDevDependencies: false
+
 custom:
   tableName: 'objects-table-${sls:stage}'
   dynamodb:
