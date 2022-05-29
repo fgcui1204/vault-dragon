@@ -4,7 +4,7 @@
 ## About the project
 
 This Tech Challenge is to create and retrieve object api. 
-This project is using serverless to deploy to aws cloud platform. 
+This project is using serverless to deploy to aws cloud platform by [github actions](https://github.com/fgcui1204/vault-dragon/actions). 
 The tests(unit test and api test) cover the critical functions of how the api is used in this challenge.
 
 
