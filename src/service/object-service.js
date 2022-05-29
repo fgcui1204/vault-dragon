@@ -17,10 +17,8 @@ export const getObject = async (objectKey, timeStamp) => {
     ExpressionAttributeValues: { ':objectKey': objectKey },
   };
 
-  logger.info(JSON.stringify(params));
-
   let { Items } = await dynamoDbClient.query(params).promise();
-  logger.info(JSON.stringify(Items));
+
   if (timeStamp) {
     Items = filter(Items, (item) => item.timestamp <= timeStamp);
   }
