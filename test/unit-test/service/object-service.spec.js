@@ -1,5 +1,5 @@
 import dynamodb from 'serverless-dynamodb-client';
-import { getObject, createObject } from '../../src/service/object-service';
+import { getObject, createObject } from '../../../src/service/object-service';
 
 jest.mock('serverless-dynamodb-client');
 jest.mock('uuid', () => {

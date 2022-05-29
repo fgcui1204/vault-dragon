@@ -20,12 +20,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Build & Test  
-        run: npm ci && npm run build && npm run test
+      - name: Build & Unit Test  
+        run: npm ci && npm run build && npm run test:unit
       - name: Setup serverless
         run: npm i -g serverless
-      - name: serverless deploygst
+      - name: Serverless deploy
         run: npm run build && npm i -g serverless && npm run deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Run Api Test
+        run: npm run test:api    

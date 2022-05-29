@@ -5,10 +5,14 @@ fileignoreconfig:
   checksum: 93e007297e6c4c17266df311dc9a27452f90e166cc3387fb7f76705e4a5e253a
 - filename: src/service/object-service.js
   checksum: 2a55cbe1639bfe0992e7ee8e112997183b95b4c82066602054ffa3deb0c9f774
-- filename: .github/workflows/build-deploy.yml
-  checksum: 27e82ec9bce3d4f0547d1a7ab0cf1c50eab4e7204b79e24ad287f63e7db080f6
 - filename: test/handler/object-handler.spec.js
   checksum: 47f75ad749e334ccc6994107579f5cbf43edf69e74e64868ea673d2f352937a8
 - filename: test/service/object-service.spec.js
   checksum: ab030eca502867ba2e4e84300deaad71d9ba6b53d2e5f0e4eeced4d1201f41db
+- filename: test/api-test/create-object.spec.js
+  checksum: aabaf67e33556e88db1dc1200088163fbda22b316e67d862f640699538b5b9d8
+- filename: test/api-test/get-object.spec.js
+  checksum: f8b715950234749751886595f13f617d782356bf264b1bcb33ba9d8c259b154c
+- filename: .github/workflows/build-deploy.yml
+  checksum: bf6c3f379a70e649367e0a0c4b8aa1dd1653c094d2fa14ae7ea47b5b13d547a1  
 version: ""

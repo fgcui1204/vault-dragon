@@ -8,7 +8,8 @@
     "start": "npm run build && serverless offline start --stage dev",
     "restart": "rimraf dist && npm run start",
     "dev": "nodemon --exec npm run restart",
-    "test": "jest",
+    "test:unit": "jest --testPathPattern=test/unit-test",
+    "test:api": "jest --testPathPattern=test/api-test",
     "ci": "npm run build && npm run test",
     "lint": "eslint --fix --ext .js .",
     "deploy": "serverless package && serverless deploy"

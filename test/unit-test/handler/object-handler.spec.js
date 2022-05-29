@@ -1,14 +1,12 @@
 import { getMockReq, getMockRes } from '@jest-mock/express';
-import { getObject, createObject } from '../../src/service/object-service';
+import { getObject, createObject } from '../../../src/service/object-service';
 import {
   createObjectHandler,
   retrieveObjectHandler,
-} from '../../src/handler/object-handler';
+} from '../../../src/handler/object-handler';
 
-jest.mock('../../src/service/object-service', () => {
-  const original = jest.requireActual('../../src/service/object-service');
+jest.mock('../../../src/service/object-service', () => {
   return {
-    ...original,
     getObject: jest.fn(),
     createObject: jest.fn(),
   };
