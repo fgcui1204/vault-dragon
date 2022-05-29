@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: test/service/object-service.spec.js
   checksum: ab030eca502867ba2e4e84300deaad71d9ba6b53d2e5f0e4eeced4d1201f41db
 - filename: test/api-test/create-object.spec.js
-  checksum: aabaf67e33556e88db1dc1200088163fbda22b316e67d862f640699538b5b9d8
+  checksum: 6ab1842c74370ce59527c9dbfbcd98d861666f139a658915bf562527a3423526
 - filename: test/api-test/get-object.spec.js
   checksum: f8b715950234749751886595f13f617d782356bf264b1bcb33ba9d8c259b154c
 - filename: .github/workflows/build-deploy.yml
