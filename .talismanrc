@@ -16,5 +16,8 @@ fileignoreconfig:
 - filename: .github/workflows/build-deploy.yml
   checksum: bf6c3f379a70e649367e0a0c4b8aa1dd1653c094d2fa14ae7ea47b5b13d547a1
 - filename: README.md
-  checksum: f0089253a0cdda81a3c45e1d5456811bab856c3dd64861b1ac8918eec162fdc3    
+  checksum: f0089253a0cdda81a3c45e1d5456811bab856c3dd64861b1ac8918eec162fdc3 
+- filename: src/index.js
+  checksum: f675e4b740e4d1d534e04152fa71469f645c710738ed5183623541d2b7d1efec
+
 version: ""
