@@ -85,35 +85,7 @@ describe('ObjectService', () => {
 
       const result = await getObject(objectKey, earlierTimestamp);
 
-      expect(result).toBeNull();
-    });
-
-    it('should return latest object value when there is no timestamp', async () => {
-      mockPromise.mockResolvedValueOnce({
-        Items: [
-          {
-            objectValue: 2132131,
-            objectId: '671d990c-b093-4e3f-b959-87681e82ae2e',
-            objectKey: 'objectKey',
-            timestamp: 1653838900219,
-          },
-          {
-            objectValue: 2132131,
-            objectId: '671d990c-b093-4e3f-b959-87681e82ae2e',
-            objectKey: 'objectKey',
-            timestamp: 1653838910219,
-          },
-        ],
-      });
-
-      const result = await getObject(objectKey);
-
-      expect(result).toEqual({
-        objectId: '671d990c-b093-4e3f-b959-87681e82ae2e',
-        objectKey,
-        objectValue: 2132131,
-        timestamp: 1653838910219,
-      });
+      expect(result).toBeUndefined();
     });
   });
 

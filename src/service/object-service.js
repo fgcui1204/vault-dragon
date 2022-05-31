@@ -17,12 +17,15 @@ export const getObject = async (objectKey, timeStamp) => {
     ExpressionAttributeValues: { ':objectKey': objectKey },
   };
 
-  let { Items } = await dynamoDbClient.query(params).promise();
+  const { Items } = await dynamoDbClient.query(params).promise();
 
-  if (timeStamp) {
-    Items = filter(Items, (item) => item.timestamp <= timeStamp);
-  }
-  return head(orderBy(Items, ['timestamp'], 'desc')) || null;
+  return head(
+    orderBy(
+      filter(Items, (item) => item.timestamp <= timeStamp),
+      ['timestamp'],
+      'desc',
+    ),
+  );
 };
 
 export const createObject = async (objectKey, objectValue) => {

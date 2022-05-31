@@ -1,13 +1,14 @@
 import { get, keys } from 'lodash';
 import { head } from 'lodash/array';
 import { values } from 'lodash/object';
+import { now } from 'lodash/date';
 import { createObject, getObject } from '../service/object-service';
 import { logger } from '../util/logger';
 
 export const retrieveObjectHandler = async (req, res) => {
   try {
     const objectKey = get(req.params, 'key');
-    const timeStamp = get(req.query, 'timestamp', '');
+    const timeStamp = get(req.query, 'timestamp', now);
 
     const object = await getObject(objectKey, timeStamp);
 
