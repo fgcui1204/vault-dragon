@@ -8,9 +8,9 @@ import { logger } from '../util/logger';
 export const retrieveObjectHandler = async (req, res) => {
   try {
     const objectKey = get(req.params, 'key');
-    const timeStamp = get(req.query, 'timestamp', now());
+    const timestamp = get(req.query, 'timestamp', now());
 
-    const object = await getObject(objectKey, timeStamp);
+    const object = await getObject(objectKey, timestamp);
 
     if (object) {
       // eslint-disable-next-line no-shadow

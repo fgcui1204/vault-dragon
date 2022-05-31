@@ -5,13 +5,17 @@ import {
   retrieveObjectHandler,
 } from './handler/object-handler';
 import { joiMiddleware } from './util/joi-middleware';
-import { createObjectSchema } from './util/schema';
+import { createObjectSchema, retrieveObjectSchema } from './util/schema';
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/object/:key', async (req, res) => retrieveObjectHandler(req, res));
+app.get(
+  '/object/:key',
+  joiMiddleware(retrieveObjectSchema, 'query'),
+  async (req, res) => retrieveObjectHandler(req, res),
+);
 
 app.post(
   '/object',
